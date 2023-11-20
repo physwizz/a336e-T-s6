@@ -908,7 +908,7 @@ static int avc_update_node(struct selinux_avc *avc,
 		rc = avc_xperms_populate(node, orig->ae.xp_node);
 		if (rc) {
 
-			avc_node_kill(node);
+			avc_node_kill(avc,node);
 
 			goto out_unlock;
 		}
@@ -1085,7 +1085,7 @@ static noinline int avc_denied(struct selinux_state *state,
 #ifdef CONFIG_SECURITY_SELINUX_ALWAYS_ENFORCE
 	if (!(avd->flags & AVD_FLAGS_PERMISSIVE))
 #else
-	if (selinux_enforcing && !(avd->flags & AVD_FLAGS_PERMISSIVE))
+	if (selinux_enforcing && !(avd->flags & AVD_FLAGS_PERMISSIVE))//too many errors fixing this line
 #endif
 // ] SEC_SELINUX_PORTING_COMMON
 

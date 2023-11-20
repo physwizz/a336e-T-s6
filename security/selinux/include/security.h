@@ -6,7 +6,7 @@
  *
  */
 
-#ifndef _SELINUX_SECURITY_H_
+//#ifndef _SELINUX_SECURITY_H_
 #define _SELINUX_SECURITY_H_
 
 #include <linux/compiler.h>
